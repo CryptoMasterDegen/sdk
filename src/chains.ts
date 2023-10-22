@@ -27,7 +27,8 @@ export enum ChainId {
   COSTON2 = 114,
   EVMOS_TESTNET = 9000,
   EVMOS_MAINNET = 9001,
-  SKALE_BELLATRIX_TESTNET = 1351057110
+  SKALE_BELLATRIX_TESTNET = 1351057110,
+  DOGECHAIN = 2000
 }
 
 export enum StakingType {
@@ -189,6 +190,29 @@ export const ETHEREUM_MAINNET: Chain = {
     decimals: 18
   },
   blockExplorerUrls: ['https://etherscan.io'],
+  network_type: NetworkType.EVM
+}
+
+export const DOGECHAIN_MAINNET: Chain = {
+  id: 'dogechain_mainnet',
+  chain_id: ChainId.DOGECHAIN,
+  name: 'Dogechain',
+  symbol: 'WDOGE',
+  mainnet: true,
+  logo: 'https://s2.coinmarketcap.com/static/img/coins/64x64/21415.png',
+  pangolin_is_live: false,
+  tracked_by_debank: false,
+  supported_by_gelato: false,
+  supported_by_twap: false,
+  supported_by_bridge: false,
+  rpc_uri: 'https://rpc.ankr.com/dogechain',
+  coingecko_id: 'wrapped-wdoge',
+  nativeCurrency: {
+    name: 'Wrapped DOGE',
+    symbol: 'WDOGE',
+    decimals: 18
+  },
+  blockExplorerUrls: ['https://explorer.dogechain.dog'],
   network_type: NetworkType.EVM
 }
 
@@ -2274,6 +2298,7 @@ export const CHAINS: { [chainId in ChainId]: Chain } = {
   [ChainId.HEDERA_TESTNET]: HEDERA_TESTNET,
   [ChainId.HEDERA_MAINNET]: HEDERA_MAINNET,
   [ChainId.ETHEREUM]: ETHEREUM_MAINNET,
+  [ChainId.DOGECHAIN]: DOGECHAIN_MAINNET,
   [ChainId.POLYGON]: POLYGON_MAINNET,
   [ChainId.FANTOM]: FANTOM_MAINNET,
   [ChainId.XDAI]: XDAI_MAINNET,
@@ -2303,6 +2328,7 @@ export const ALL_CHAINS: Chain[] = [
   HEDERA_TESTNET,
   HEDERA_MAINNET,
   ETHEREUM_MAINNET,
+  DOGECHAIN_MAINNET,
   BSC_MAINNET,
   POLYGON_MAINNET,
   OKXCHAIN_MAINNET,
